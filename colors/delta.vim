@@ -5,7 +5,7 @@ function s:highlight(group, bg, fg, style)
   let gui = a:style == '' ? '' : 'gui=' . a:style
   let fg = a:fg == '' ? '' : 'guifg=' . a:fg
   let bg = a:bg == '' ? '' : 'guibg=' . a:bg
-  exec 'hi ' . a:group . ' ' . bg . ' ' . fg  . ' ' . gui
+  exec 'hi ' . a:group . ' ' . bg . ' ' . fg .' ' . gui
 endfunction
 
 let s:Color0 = '#56595B'
@@ -35,7 +35,7 @@ call s:highlight('Function', '', s:Color4, '')
 call s:highlight('Number', '', s:Color2, '')
 call s:highlight('TSCharacter', '', s:Color2, '')
 call s:highlight('String', '', s:Color5, '')
-call s:highlight('StatusLine', s:Color7, s:Color6, '')
+call s:highlight('StatusLine', '#202025', s:Color8, '')
 call s:highlight('WildMenu', s:Color6, s:Color8, '')
 call s:highlight('Pmenu', s:Color6, s:Color8, '')
 call s:highlight('PmenuSel', s:Color8, '', '')
@@ -52,6 +52,8 @@ call s:highlight('TabLine', s:Color6, s:Color7, '')
 call s:highlight('TabLineSel', s:Color13, '', '')
 call s:highlight('TabLineFill', s:Color6, s:Color7, '')
 call s:highlight('TSPunctDelimiter', '', s:Color8, '')
+call s:highlight('VertSplit', 's:color8', s:Color8, '')
+
 
 highlight! link TSPunctSpecial TSPunctDelimiter
 highlight! link NonText Comment
