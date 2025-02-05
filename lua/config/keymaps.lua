@@ -4,36 +4,41 @@
 --
 --
 
+local map = LazyVim.safe_keymap_set
+
+map("n", "<C-Left>", "b")
+map("n", "<C-Right>", "e")
+
 local harpoon = require("harpoon")
 
 -- REQUIRED
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<leader>a", function()
+map("n", "<leader>a", function()
   harpoon:list():add()
 end)
-vim.keymap.set("n", "<C-e>", function()
+map("n", "<C-e>", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
-vim.keymap.set("n", "<C-h>", function()
+map("n", "<C-h>", function()
   harpoon:list():select(1)
 end)
-vim.keymap.set("n", "<C-t>", function()
+map("n", "<C-t>", function()
   harpoon:list():select(2)
 end)
-vim.keymap.set("n", "<C-n>", function()
+map("n", "<C-n>", function()
   harpoon:list():select(3)
 end)
-vim.keymap.set("n", "<C-s>", function()
+map("n", "<C-s>", function()
   harpoon:list():select(4)
 end)
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S-P>", function()
+map("n", "<C-S-P>", function()
   harpoon:list():prev()
 end)
-vim.keymap.set("n", "<C-S-N>", function()
+map("n", "<C-S-N>", function()
   harpoon:list():next()
 end)
