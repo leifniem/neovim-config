@@ -28,16 +28,21 @@ return {
         {
           "branch",
           icon = "",
+          separator = { left = " ", right = "" },
         },
         {
           "diff",
           symbols = { added = " ", modified = " ", removed = " " },
-          colored = false,
+          colored = true,
         },
       },
       lualine_c = {
         {
           "buffers",
+          -- buffers_color = {
+          --   active = { bg, fg }
+          --   inactive = { bg, fg }
+          -- }
         },
       },
       lualine_x = {
