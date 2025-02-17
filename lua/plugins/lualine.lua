@@ -24,25 +24,24 @@ return {
       lualine_a = {
         { "mode", separator = { left = " ", right = "" } },
       },
+      lualine_c = {
+        --   -- {
+        --   --   "diff",
+        --   --   symbols = { added = " ", modified = " ", removed = " " },
+        --   --   colored = true,
+        --   -- },
+      },
       lualine_b = {
         {
-          "branch",
-          icon = "",
-          separator = { left = " ", right = "" },
-        },
-        {
-          "diff",
-          symbols = { added = " ", modified = " ", removed = " " },
-          colored = true,
-        },
-      },
-      lualine_c = {
-        {
           "buffers",
-          -- buffers_color = {
-          --   active = { bg, fg }
-          --   inactive = { bg, fg }
-          -- }
+          buffers_color = {
+            active = { bg = "#4a4a4a", fg = "#FFFFFF" },
+            inactive = { bg = "#202025", fg = "#8A8A8A" },
+          },
+          show_modified_status = false,
+          symbols = {
+            alternate_file = "",
+          },
         },
       },
       lualine_x = {
@@ -54,6 +53,11 @@ return {
       },
       lualine_y = { clients_lsp },
       lualine_z = {
+        {
+          "branch",
+          icon = "",
+          separator = { left = " ", right = "" },
+        },
         { "location", separator = { left = "", right = " " }, icon = "" },
       },
     },

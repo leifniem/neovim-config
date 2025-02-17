@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
-vim.o.shell = "D:\\Benutzer\\Leif\\scoop\\apps\\pwsh\\current\\pwsh.exe -NoLogo"
+vim.o.shell = "nu"
 vim.o.laststatus = 3
 vim.o.cmdheight = 0
 

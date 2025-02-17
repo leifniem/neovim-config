@@ -1,7 +1,7 @@
 return {
   "mg979/vim-visual-multi",
   branch = "master",
-  enabled = true,
+  enabled = false,
   init = function()
     vim.g.VM_maps = {
       ["Find Under"] = "<C-d>",
