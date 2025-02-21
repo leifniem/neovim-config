@@ -38,6 +38,7 @@ return {
             active = { bg = "#4a4a4a", fg = "#FFFFFF" },
             inactive = { bg = "#202025", fg = "#8A8A8A" },
           },
+          separator = { left = " ", right = "" },
           show_modified_status = false,
           symbols = {
             alternate_file = "",

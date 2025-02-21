@@ -192,6 +192,17 @@ call <sid>hi("TelescopePromptNormal",    s:gui0F, s:gui01, s:cterm0F, s:cterm01,
 call <sid>hi("TelescopePreviewNormal",    "", s:gui00, "", s:cterm00, "none")
 call <sid>hi("TelescopePreviewBorder",    s:gui00, s:gui00, s:cterm00, s:cterm00, "none")
 call <sid>hi("TelescopePreviewTitle",    s:gui00, s:gui00, s:cterm00, s:cterm00, "none")
+call <sid>hi("SnacksPickerTitle",    s:gui01, s:gui01, s:cterm01, s:cterm01, "none")
+call <sid>hi("SnacksPickerBorder",    s:gui01, s:gui01, s:cterm01, s:cterm01, "none")
+call <sid>hi("SnacksPickerPreviewBorder",    s:gui00, s:gui00, s:cterm00, s:cterm00, "none")
+call <sid>hi("SnacksPickerCursorLine",    s:gui0A, s:gui02, s:cterm0A, s:cterm02, "none")
+call <sid>hi("SnacksPickerPreviewCursorLine",    s:gui0A, s:gui02, s:cterm0A, s:cterm02, "none")
+call <sid>hi("SnacksPickerListCursorLine",    s:gui0A, s:gui02, s:cterm0A, s:cterm02, "none")
+call <sid>hi("SnacksPickerPreview",    "", s:gui00, "", s:cterm00, "none")
+call <sid>hi("SnacksPickerTree",    s:gui02, "", s:cterm02, "", "none")
+call <sid>hi("SnacksIndent",    s:gui01, "", s:cterm01, "", "none")
+call <sid>hi("SnacksIndentScope",    s:gui02, "", s:cterm02, "", "none")
+call <sid>hi("NormalFloat",    s:gui0A, s:gui01, s:cterm0A, s:cterm01, "none")
 
 " Hide '~' at end of buffer in neovim
 " Set g:material_hide_endofbuffer = 0 to disable
