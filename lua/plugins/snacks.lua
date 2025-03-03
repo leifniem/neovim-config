@@ -110,25 +110,24 @@ return {
       },
     },
     picker = {
-      hidden = true,
+      hidden = false,
       -- show files ignored by git like node_modules
       ignored = true,
       exclude = excluded,
-      layout = {
-        title = "",
-      },
-      sources = {
-        explorer = {
-          layout = {
-            border = "hpad",
-            title = "",
-            layout = {
-              title = "",
-              position = "right",
-            },
-          },
-        },
-      },
+      preset = "sidebar",
+      layout = { position = "right" },
+      -- sources = {
+      --   explorer = {
+      --     layout = {
+      --       border = "hpad",
+      --       title = "",
+      --       layout = {
+      --         title = "",
+      --         position = "right",
+      --       },
+      --     },
+      --   },
+      -- },
     },
   },
 }

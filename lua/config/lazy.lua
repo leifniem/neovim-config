@@ -18,6 +18,18 @@ vim.o.shell = "nu"
 vim.o.laststatus = 3
 vim.o.cmdheight = 0
 
+-- Neovide settings
+vim.o.guifont = "GeistMono Nerd Font:h12"
+vim.g.neovide_padding_top = 40
+vim.g.neovide_padding_left = 40
+vim.g.neovide_padding_right = 40
+vim.g.neovide_padding_bottom = 40
+vim.g.neovide_floating_shadow = false
+vim.g.neovide_refresh_rate = 60
+vim.g.neovide_refresh_rate_idle = 1
+vim.g.neovide_floating_corner_radius = 0.5
+vim.opt.linespace = 0
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
