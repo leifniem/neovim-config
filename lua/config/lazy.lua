@@ -14,7 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
-vim.o.shell = "nu"
+if vim.fn.has("macunix") then
+  vim.o.shell = "fish"
+else
+  vim.o.shell = "nu"
+end
 vim.o.laststatus = 3
 vim.o.cmdheight = 0
 
