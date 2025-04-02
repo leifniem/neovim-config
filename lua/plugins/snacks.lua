@@ -116,18 +116,18 @@ return {
       exclude = excluded,
       preset = "sidebar",
       layout = { position = "right" },
-      -- sources = {
-      --   explorer = {
-      --     layout = {
-      --       border = "hpad",
-      --       title = "",
-      --       layout = {
-      --         title = "",
-      --         position = "right",
-      --       },
-      --     },
-      --   },
-      -- },
+      sources = {
+        explorer = {
+          layout = {
+            border = "hpad",
+            title = "",
+            layout = {
+              title = "",
+              position = "right",
+            },
+          },
+        },
+      },
     },
   },
 }

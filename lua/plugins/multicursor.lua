@@ -8,16 +8,16 @@ return {
     local set = vim.keymap.set
 
     -- Add or skip cursor above/below the main cursor.
-    set({ "n", "x" }, "<leader>m<up>", function()
+    set({ "n", "x" }, "<leader>m<k>", function()
       mc.lineAddCursor(-1)
     end)
-    set({ "n", "x" }, "<leader>m<down>", function()
+    set({ "n", "x" }, "<leader>m<j>", function()
       mc.lineAddCursor(1)
     end)
-    set({ "n", "x" }, "<leader><up>", function()
+    set({ "n", "x" }, "<leader><k>", function()
       mc.lineSkipCursor(-1)
     end)
-    set({ "n", "x" }, "<leader><down>", function()
+    set({ "n", "x" }, "<leader><j>", function()
       mc.lineSkipCursor(1)
     end)
 

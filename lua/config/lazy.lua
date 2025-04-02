@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 vim.o.shell = "nu"
 vim.o.laststatus = 3
-vim.o.cmdheight = 0
+-- vim.o.cmdheight = 2
 
 -- Neovide settings
 vim.o.guifont = "GeistMono Nerd Font:h12"
