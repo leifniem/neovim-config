@@ -33,7 +33,7 @@ return {
       },
       lualine_b = {
         {
-          "buffers",
+          "filename",
           buffers_color = {
             active = { bg = "#4a4a4a", fg = "#FFFFFF" },
             inactive = { bg = "#202025", fg = "#8A8A8A" },

@@ -14,7 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
-vim.o.shell = "nu"
+if vim.fn.has("win64") or vim.fn.has("win32") then
+  vim.o.shell = "nu"
+else
+  vim.o.shell = "fish"
+end
 vim.o.laststatus = 3
 -- vim.o.cmdheight = 2
 
