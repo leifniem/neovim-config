@@ -1,0 +1,16 @@
+{
+  "name": "leifniem-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "javascript",
+          "typescript",
+          "typescriptreact",
+          "javascriptreact"
+        ],
+        "path": "./jsts.json"
+      }
+    ]
+  }
+}

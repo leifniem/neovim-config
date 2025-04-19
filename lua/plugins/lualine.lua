@@ -17,8 +17,14 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
+      icons_enabled = true,
+      -- theme = theme,
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
+      ignore_focus = {},
+      always_divide_middle = true,
+      globalstatus = true,
     },
     sections = {
       lualine_a = {

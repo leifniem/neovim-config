@@ -14,10 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
-if vim.fn.has("win64") or vim.fn.has("win32") then
-  vim.o.shell = "nu"
-else
+local os = vim.loop.os_uname().sysname
+if (os == "Darwin") or (os == "Linux") then
   vim.o.shell = "fish"
+else
+  vim.o.shell = "nu"
 end
 vim.o.laststatus = 3
 -- vim.o.cmdheight = 2
@@ -34,11 +35,17 @@ vim.g.neovide_refresh_rate_idle = 1
 vim.g.neovide_floating_corner_radius = 0.5
 vim.opt.linespace = 0
 
+if vim.g.neovide and vim.fn.has("macunix") then
+  vim.keymap.set("n", "<D-n>", ":silent exec '!/Applications/neovide.app/Contents/MacOS/neovide'<cr>")
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "plugins" },
   },
   defaults = {
