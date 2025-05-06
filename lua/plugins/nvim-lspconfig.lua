@@ -67,6 +67,43 @@ return {
             propertyDeclarationTypes = { enabled = true },
             variableTypes = { enabled = false },
           },
+          includeCompletionsForImportStatements = true,
+          includeCompletionsForModuleExports = true,
+          importModuleSpecifier = "non-relative",
+        },
+        javascript = {
+          updateImportsOnFileMove = { enabled = "always" },
+          suggest = {
+            completeFunctionCalls = true,
+          },
+          inlayHints = {
+            enumMemberValues = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            parameterNames = { enabled = "literals" },
+            parameterTypes = { enabled = true },
+            propertyDeclarationTypes = { enabled = true },
+            variableTypes = { enabled = false },
+          },
+          includeCompletionsForImportStatements = true,
+          includeCompletionsForModuleExports = true,
+          importModuleSpecifier = "non-relative",
+        },
+        typescriptreact = {
+          updateImportsOnFileMove = { enabled = "always" },
+          suggest = {
+            completeFunctionCalls = true,
+          },
+          inlayHints = {
+            enumMemberValues = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            parameterNames = { enabled = "literals" },
+            parameterTypes = { enabled = true },
+            propertyDeclarationTypes = { enabled = true },
+            variableTypes = { enabled = false },
+          },
+          includeCompletionsForImportStatements = true,
+          includeCompletionsForModuleExports = true,
+          importModuleSpecifier = "non-relative",
         },
       },
       keys = {
@@ -201,11 +238,12 @@ return {
         vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
     end,
     eslint = function(_, opts)
-      LazyVim.lsp.on_attach(function(client, buffer)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer,
-          command = "EslintFixAll",
-        })
+      LazyVim.lsp.on_attach(function(client)
+        if client.name == "eslint" then
+          client.server_capabilities.documentFormattingProvider = true
+        elseif client.name == "tsserver" then
+          client.server_capabilities.documentFormattingProvider = false
+        end
       end)
     end,
   },

@@ -1,24 +1,15 @@
-local clients_lsp = function()
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  local clients = vim.lsp.get_clients()
-  if next(clients) == nil then
-    return ""
-  end
-
-  local c = {}
-  for _, client in pairs(clients) do
-    table.insert(c, client.name)
-  end
-  return " " .. table.concat(c, "|")
-end
-
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
+      icons_enabled = true,
+      -- theme = theme,
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
+      ignore_focus = {},
+      always_divide_middle = true,
+      globalstatus = true,
     },
     sections = {
       lualine_a = {
@@ -52,7 +43,6 @@ return {
           update_in_insert = true,
         },
       },
-      lualine_y = { clients_lsp },
       lualine_z = {
         {
           "branch",

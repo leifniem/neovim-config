@@ -14,10 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
-if vim.fn.has("win64") or vim.fn.has("win32") then
-  vim.o.shell = "nu"
-else
+local os = vim.loop.os_uname().sysname
+if (os == "Darwin") or (os == "Linux") then
   vim.o.shell = "fish"
+else
+  vim.o.shell = "nu"
 end
 vim.o.laststatus = 3
 -- vim.o.cmdheight = 2
@@ -34,11 +35,36 @@ vim.g.neovide_refresh_rate_idle = 1
 vim.g.neovide_floating_corner_radius = 0.5
 vim.opt.linespace = 0
 
+if vim.g.neovide and vim.fn.has("macunix") then
+  vim.keymap.set("n", "<D-n>", ":silent exec '!/Applications/neovide.app/Contents/MacOS/neovide'<cr>")
+end
+if vim.g.neovide then
+  vim.g.terminal_color_0 = "#45475a"
+  vim.g.terminal_color_1 = "#f38ba8"
+  vim.g.terminal_color_2 = "#a6e3a1"
+  vim.g.terminal_color_3 = "#f9e2af"
+  vim.g.terminal_color_4 = "#89b4fa"
+  vim.g.terminal_color_5 = "#f5c2e7"
+  vim.g.terminal_color_6 = "#94e2d5"
+  vim.g.terminal_color_7 = "#bac2de"
+  vim.g.terminal_color_8 = "#585b70"
+  vim.g.terminal_color_9 = "#f38ba8"
+  vim.g.terminal_color_10 = "#a6e3a1"
+  vim.g.terminal_color_11 = "#f9e2af"
+  vim.g.terminal_color_12 = "#89b4fa"
+  vim.g.terminal_color_13 = "#f5c2e7"
+  vim.g.terminal_color_14 = "#94e2d5"
+  vim.g.terminal_color_15 = "#a6adc8"
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
+    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "plugins" },
   },
   defaults = {

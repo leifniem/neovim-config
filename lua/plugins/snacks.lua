@@ -13,84 +13,7 @@ local excluded = {
   "yarn.lock",
 }
 
-local root_patterns = {
-  -- directories
-  "client",
-  "server",
-
-  -- version control systems
-  "_darcs",
-  ".hg",
-  ".bzr",
-  ".svn",
-  ".git",
-
-  -- build tools
-  "Makefile",
-  "CMakeLists.txt",
-  "build.gradle",
-  "build.gradle.kts",
-  "pom.xml",
-  "build.xml",
-
-  -- docker
-  "Dockerfile",
-  "docker-compose.yml",
-
-  -- node.js and javascript
-  "package.json",
-  "package-lock.json",
-  "yarn.lock",
-  "bun.lockb",
-  ".nvmrc",
-  "gulpfile.js",
-
-  -- python
-  "requirements.txt",
-  "Pipfile",
-  "pyproject.toml",
-  "setup.py",
-  "tox.ini",
-
-  -- rust
-  "Cargo.toml",
-
-  -- go
-  "go.mod",
-
-  "mix.exs",
-
-  -- configuration files
-  ".prettierrc",
-  ".prettierrc.json",
-  ".prettierrc.yaml",
-  ".prettierrc.yml",
-  ".eslintrc",
-  ".eslintrc.json",
-  ".eslintrc.js",
-  ".eslintrc.cjs",
-  ".eslintignore",
-  ".stylelintrc",
-  ".stylelintrc.json",
-  ".stylelintrc.yaml",
-  ".stylelintrc.yml",
-  ".editorconfig",
-  ".gitignore",
-
-  -- html projects
-  "index.html",
-
-  -- miscellaneous
-  "README.md",
-  "LICENSE",
-  ".env",
-  ".env.example",
-  "config.yaml",
-  "config.yml",
-  ".terraform",
-  ".kitchen.yml",
-}
-vim.g.root_spec = { root_patterns, "cwd", "lsp" }
+vim.g.root_spec = { "cwd", "lsp" }
 
 return {
   "folke/snacks.nvim",
@@ -119,7 +42,6 @@ return {
       sources = {
         explorer = {
           layout = {
-            border = "hpad",
             title = "",
             layout = {
               title = "",
