@@ -56,7 +56,6 @@ if vim.g.neovide then
   vim.g.terminal_color_14 = "#94e2d5"
   vim.g.terminal_color_15 = "#a6adc8"
 end
-
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
