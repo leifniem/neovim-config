@@ -1,0 +1,3 @@
+return {
+  "leifniem/yugen.nvim",
+}
