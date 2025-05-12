@@ -1,3 +1,0 @@
-return {
-  "leifniem/yugen.nvim",
-}
