@@ -8,3 +8,4 @@ local map = LazyVim.safe_keymap_set
 
 map("n", "<C-Left>", "b")
 map("n", "<C-Right>", "e")
+map("i", ";;", "<C-o>")
