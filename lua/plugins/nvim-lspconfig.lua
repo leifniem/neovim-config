@@ -2,6 +2,10 @@ return {
   "nvim-lspconfig",
   opts = {
     diagnostics = {
+      virtual_text = false,
+      float = {
+        border = "rounded",
+      },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = "",

@@ -8,7 +8,7 @@ vim.opt.statuscolumn = "%l%s"
 vim.g.lazyvim_eslint_auto_format = true
 vim.g.root_spec = { "cwd" }
 vim.opt.relativenumber = false
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 local os = vim.loop.os_uname().sysname
 if (os == "Darwin") or (os == "Linux") then

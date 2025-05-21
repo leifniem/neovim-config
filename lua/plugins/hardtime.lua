@@ -14,5 +14,6 @@ return {
       ["k"] = { "n" },
       ["l"] = { "n" },
     },
+    disable_mouse = false,
   },
 }
