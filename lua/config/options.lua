@@ -2,6 +2,8 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 vim.opt.numberwidth = 3
 vim.opt.signcolumn = "yes:1"
 vim.opt.statuscolumn = "%l%s"
@@ -33,7 +35,3 @@ vim.g.neovide_refresh_rate = 60
 vim.g.neovide_refresh_rate_idle = 1
 vim.g.neovide_floating_corner_radius = 0.5
 vim.opt.linespace = 0
-
-return {
-  colorscheme = "dark-funeral",
-}

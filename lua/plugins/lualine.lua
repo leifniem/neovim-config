@@ -23,27 +23,35 @@ return {
         --   -- },
       },
       lualine_b = {
+        { "filetype", icon_only = true },
         {
           "filename",
+          padding = 0,
           buffers_color = {
             active = { bg = "#4a4a4a", fg = "#FFFFFF" },
             inactive = { bg = "#202025", fg = "#8A8A8A" },
           },
-          separator = { left = " ", right = "" },
+          separator = { left = "", right = "" },
           show_modified_status = false,
+          path = 1,
           symbols = {
             alternate_file = "",
+            newfile = "",
+            unnamed = "",
           },
         },
       },
       lualine_x = {
+        -- {
+        --   "diagnostics",
+        --   symbols = { error = " ", warn = " ", info = " ", hint = " " },
+        --   update_in_insert = true,
+        -- },
         {
-          "diagnostics",
-          symbols = { error = " ", warn = " ", info = " ", hint = " " },
-          update_in_insert = true,
+          "overseer",
         },
       },
-      lualine_z = {
+      lualine_y = {
         {
           "branch",
           icon = "",
@@ -51,14 +59,21 @@ return {
         },
         { "location", separator = { left = "", right = " " }, icon = "" },
       },
+      lualine_z = {
+        {
+          "datetime",
+          style = "%H:%M",
+          separator = { left = " ", right = "" },
+        },
+      },
     },
     inactive_sections = {
       lualine_a = { "filename" },
       lualine_b = {},
       lualine_c = {},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = { "location" },
+      lualine_x = { "location", "progress" },
+      lualine_y = { "location", "progress" },
+      lualine_z = {},
     },
   },
 }
