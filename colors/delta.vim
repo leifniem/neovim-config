@@ -10,7 +10,6 @@
 "    execute "silent !/bin/sh ".g:base16_shell_path."/base16-materialtheme.".&background.".sh"
 "  endif
 " endif
-
 " GUI color definitions
 let s:gui00 = "121216"
 let s:gui01 = "202025"
