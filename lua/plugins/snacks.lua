@@ -20,7 +20,15 @@ return {
   opts = {
     -- need notifier for disabling "No notifications available"
     image = { enabled = true },
-
+    keys = {
+      {
+        "<leader>gU",
+        function()
+          Snacks.lazygit.open()
+        end,
+        desc = "Lazygit",
+      },
+    },
     indent = {
       chunk = {
         enabled = true,
