@@ -11,7 +11,7 @@
 "  endif
 " endif
 " GUI color definitions
-let s:gui00 = "121216"
+let s:gui00 = "000000"
 let s:gui01 = "202025"
 let s:gui02 = "4A4A4A"
 let s:gui03 = "83868C"
