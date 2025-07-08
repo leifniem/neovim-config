@@ -9,11 +9,11 @@ return {
       ["<Down>"] = { "n", "x" },
     },
     restricted_keys = {
-      ["h"] = { "n" },
-      ["j"] = { "n" },
-      ["k"] = { "n" },
-      ["l"] = { "n" },
+      ["h"] = {},
+      ["j"] = {},
+      ["k"] = {},
+      ["l"] = {},
     },
-    disable_mouse = false,
+    disable_mouse = true,
   },
 }

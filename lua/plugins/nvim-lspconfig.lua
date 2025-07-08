@@ -33,7 +33,6 @@ return {
     },
     vtsls = {
       enabled = false,
-      mason = false,
       -- explicitly add default filetypes, so that we can extend
       -- them in related extras
       -- filetypes = {
