@@ -35,6 +35,7 @@ vim.g.neovide_floating_shadow = false
 vim.g.neovide_refresh_rate = 60
 vim.g.neovide_refresh_rate_idle = 1
 vim.g.neovide_floating_corner_radius = 0.5
+vim.g.neovide_touch_drag_timeout = 0.7
 vim.opt.linespace = 0
 
 if vim.g.neovide then

@@ -13,7 +13,7 @@ return {
     },
     adapters = {
       ["neotest-jest"] = {
-        jestCommand = "npm run test -- ",
+        jestCommand = "./node_modules/.bin/jest ",
         env = { CI = true },
         jestConfigFile = function()
           local file = vim.fn.expand("%:p")
