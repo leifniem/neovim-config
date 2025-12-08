@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd("User", {
 return {
   {
     "olimorris/codecompanion.nvim",
+    enabled = false,
     opts = {},
     dependencies = {
       "nvim-lua/plenary.nvim",
