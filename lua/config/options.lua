@@ -13,6 +13,7 @@ vim.g.root_spec = { "cwd" }
 vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
+vim.g.lazyvim_picker = "fzf"
 local os = vim.loop.os_uname().sysname
 if (os == "Darwin") or (os == "Linux") then
   vim.o.shell = "fish"
