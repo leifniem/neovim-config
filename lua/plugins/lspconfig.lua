@@ -31,6 +31,9 @@ return {
     ts_ls = {
       enabled = false,
     },
+    -- vtsls = {
+    --   enabled = false,
+    -- },
     eslint = {
       enabled = true,
       filetypes = {
@@ -91,6 +94,9 @@ return {
       -- disable tsserver
       return true
     end,
+    -- vtsls = function()
+    --   return true
+    -- end,
     eslint = function(_, opts)
       LazyVim.lsp.on_attach(function(client)
         if client.name == "eslint" then

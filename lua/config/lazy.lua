@@ -17,7 +17,7 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "oldworld",
     } },
     -- import/override with your plugins
     { import = "lazyvim.plugins.extras.test.core" },
