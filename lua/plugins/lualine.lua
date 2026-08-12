@@ -4,7 +4,7 @@ return {
     options = {
       disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
       icons_enabled = true,
-      -- theme = theme,
+      -- theme = themeu
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       ignore_focus = {},
@@ -28,7 +28,7 @@ return {
           "filename",
           padding = 0,
           buffers_color = {
-            active = { bg = "#4a4a4a", fg = "#FFFFFF" },
+            active = { bg = "4a4a4a", fg = "#FFFFFF" },
             inactive = { bg = "#202025", fg = "#8A8A8A" },
           },
           separator = { left = "", right = "" },

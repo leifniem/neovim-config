@@ -17,6 +17,7 @@ vim.g.root_spec = { "cwd", "lsp" }
 
 return {
   "folke/snacks.nvim",
+  ---@type snacks.Config
   opts = {
     -- need notifier for disabling "No notifications available"
     image = { enabled = true },
@@ -41,7 +42,6 @@ return {
       },
     },
     picker = {
-      hidden = false,
       -- show files ignored by git like node_modules
       ignored = true,
       exclude = excluded,
@@ -49,11 +49,13 @@ return {
       layout = { position = "right" },
       sources = {
         explorer = {
+          hidden = true,
           layout = {
             title = "",
             layout = {
               title = "",
               position = "right",
+              auto_hide = { "input" },
             },
           },
         },

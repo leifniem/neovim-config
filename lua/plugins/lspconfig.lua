@@ -61,11 +61,15 @@ return {
           "typescript.tsx",
         },
       },
-      -- tsgo advertises codeActionProvider but only serves source-kind actions
-      -- via an explicit context.only filter. A bare vim.lsp.buf.code_action()
-      -- (what <leader>ca sends) returns nothing, and quickfix-kind actions are
-      -- not implemented yet. Keep on vtsls until tsgo's LSP catches up.
-      tsgo = {
+      -- `tsgo` was renamed to `tsc` in nvim-lspconfig 033492ba (TS 7.0 stable
+      -- ships the Go compiler as the regular `typescript` package / `tsc` bin).
+      -- Still not a vtsls replacement: TS 7.0.2's LSP implements exactly one
+      -- quickfix ("Implement interface") and zero refactors. A bare
+      -- vim.lsp.buf.code_action() (what <leader>ca sends) is empty for missing
+      -- imports, unused decls, spelling, implicit any, add-async, etc. It only
+      -- serves source-kind actions (organizeImports/sortImports/
+      -- removeUnusedImports/fixAll). Re-test when quickfixes land upstream.
+      tsc = {
         enabled = false,
         filetypes = {
           "javascript",
@@ -107,6 +111,25 @@ return {
           "vue",
         },
         root_markers = { ".git" },
+      },
+      fallow = {
+        cmd = { "fallow-lsp" },
+        root_markers = { ".fallowrc.json", "package.json", ".git" },
+        init_options = {
+          -- Every issue type is enabled by default. List only the ones you
+          -- want to turn off; any key you omit stays enabled.
+          issueTypes = {
+            ["coverage-gaps"] = false,
+          },
+        },
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+        },
       },
       codelldb = { enabled = false, mason = false },
       debugpy = { enabled = false, mason = false },
