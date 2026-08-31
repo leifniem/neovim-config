@@ -18,12 +18,6 @@ map("i", ";;", "<C-o>")
 
 -- git jump -> fzf-lua / quickfix. Plain `git jump` spawns `$EDITOR -q`, which
 -- nests a second nvim, so use --stdout and parse it here.
---
--- Output shape differs per mode: diff and grep emit "file:lnum:col: text",
--- merge and ws emit "file:lnum: text". Parsed by hand rather than fed to
--- 'errorformat' so both shapes land the same way, and so ws mode's second
--- line per error (the raw offending text, e.g. "+trail") is dropped instead
--- of becoming a bogus entry.
 local function git_jump_items(args)
   local out = vim.fn.systemlist("git jump --stdout " .. args)
   if vim.v.shell_error ~= 0 then
@@ -61,13 +55,16 @@ vim.api.nvim_create_user_command("GitJump", function(opts)
 
   -- fzf-lua reads location back out of the entry string, so re-emit the
   -- canonical file:lnum:col:text that its file actions and previewer expect.
-  fzf.fzf_exec(vim.tbl_map(function(i)
-    return ("%s:%d:%d:%s"):format(i.filename, i.lnum, i.col, i.text)
-  end, items), {
-    prompt = "git jump " .. opts.args .. "> ",
-    previewer = true,
-    actions = fzf.defaults.actions.files,
-  })
+  fzf.fzf_exec(
+    vim.tbl_map(function(i)
+      return ("%s:%d:%d:%s"):format(i.filename, i.lnum, i.col, i.text)
+    end, items),
+    {
+      prompt = "git jump " .. opts.args .. "> ",
+      previewer = true,
+      actions = fzf.defaults.actions.files,
+    }
+  )
 end, {
   nargs = "+",
   bang = true,
@@ -77,5 +74,6 @@ end, {
   desc = "git jump <mode> -> fzf (bang: quickfix)",
 })
 
-map("n", "<leader>gj", "<cmd>GitJump diff<cr>", { desc = "Git Jump (diff hunks, fzf)" })
-map("n", "<leader>gJ", "<cmd>GitJump! diff<cr>", { desc = "Git Jump (diff hunks, quickfix)" })
+map("n", "<leader>gjd", "<cmd>GitJump diff<cr>", { desc = "Git Jump (diff hunks, fzf)" })
+map("n", "<leader>gjh", "<cmd>GitJump! diff<cr>", { desc = "Git Jump (diff hunks, quickfix)" })
+map("n", "<leader>gjm", "<cmd>GitJump merge<cr>", { desc = "Git Jump (merge)" })
