@@ -42,14 +42,6 @@ return {
           "typescript.tsx",
         },
       },
-      --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-      --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-      tsserver = {
-        enabled = false,
-      },
-      ts_ls = {
-        enabled = false,
-      },
       vtsls = {
         enabled = true,
         filetypes = {
@@ -131,32 +123,8 @@ return {
           "typescript.tsx",
         },
       },
-      codelldb = { enabled = false, mason = false },
-      debugpy = { enabled = false, mason = false },
-      delve = { enabled = false, mason = false },
-      gitui = { enabled = false, mason = false },
-      gofumpt = { enabled = false, mason = false },
-      goimports = { enabled = false, mason = false },
-      gopls = { enabled = false, mason = false },
-      pyright = { enabled = false, mason = false },
-      ruff = { enabled = false, mason = false },
-      shellcheck = { enabled = false, mason = false },
-      shfmt = { enabled = false, mason = false },
       taplo = { enabled = false, mason = false },
       texlab = { enabled = false, mason = false },
-      volar = { enabled = false, mason = false },
-    },
-    setup = {
-      --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-      --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-      tsserver = function()
-        -- disable tsserver
-        return true
-      end,
-      ts_ls = function()
-        -- disable tsserver
-        return true
-      end,
     },
   },
 }

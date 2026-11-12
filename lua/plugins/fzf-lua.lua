@@ -5,9 +5,12 @@ return {
   ---@type fzf-lua.Config|{}
   ---@diagnostic disable: missing-fields
   opts = {
-    picker = {
-      files = {
-        git_icons = true,
+    files = {
+      git_icons = true,
+    },
+    previewers = {
+      builtin = {
+        syntax_limit_b = 256 * 1024,
       },
     },
   },
